@@ -2,601 +2,98 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<title>中華民國義務役（4 個月軍事訓練役）新兵生存指南</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>軍事知識小站</title>
 <style>
-  *{box-sizing:border-box;}
-  body{margin:0;padding:0;background:#F7F7F5;font-family:'PingFang TC','Microsoft JhengHei',sans-serif;color:#1A1B1C;line-height:1.7;}
-  .layout{display:grid;grid-template-columns:220px 1fr;max-width:1200px;margin:0 auto;gap:0;}
-  nav{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:24px 16px;border-right:1px solid #E4E3DD;background:#fff;}
-  nav .brand{font-size:15px;font-weight:700;margin-bottom:4px;}
-  nav .sub{font-size:11px;color:#8a9099;margin-bottom:16px;}
-  nav ol{list-style:none;padding:0;margin:0;counter-reset:ch;}
-  nav ol li{counter-increment:ch;margin:0;}
-  nav ol li a{display:block;padding:6px 8px;font-size:12.5px;color:#5F6670;text-decoration:none;border-radius:4px;line-height:1.4;}
-  nav ol li a:hover{background:#eef2f7;color:#1e3a5f;}
-  nav ol li a.active{background:#1e3a5f;color:#fff;}
-  nav .phase{font-size:10.5px;color:#8a9099;text-transform:uppercase;letter-spacing:1px;margin:14px 0 4px 8px;font-weight:600;}
-  main{padding:28px 32px;min-width:0;}
-  h1{font-size:24px;margin:0 0 4px;}
-  .sub{font-size:13px;color:#5F6670;margin-bottom:20px;}
-  h2{font-size:19px;margin:36px 0 10px;padding-left:10px;border-left:4px solid #1e3a5f;scroll-margin-top:20px;}
-  h3{font-size:15px;margin:18px 0 6px;color:#1e3a5f;}
-  table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;margin:8px 0 12px;border:1px solid #E4E3DD;border-radius:6px;overflow:hidden;}
-  th{background:#1e3a5f;color:#fff;padding:8px 10px;text-align:left;font-weight:600;}
-  td{padding:8px 10px;border-bottom:1px solid #E4E3DD;vertical-align:top;}
-  tr:nth-child(even) td{background:#fcfcf9;}
-  .yes{color:#35705A;font-weight:600;}
-  .no{color:#A14E50;font-weight:600;}
-  .warn{background:#fff5e6;border-left:4px solid #9A6A2F;padding:10px 14px;margin:10px 0;font-size:13px;border-radius:0 4px 4px 0;}
-  .tip{background:#eaf2e8;border-left:4px solid #35705A;padding:10px 14px;margin:10px 0;font-size:13px;border-radius:0 4px 4px 0;}
-  ol.rule{padding-left:20px;font-size:14px;}
-  ol.rule li{margin-bottom:6px;}
-  .song{background:#fff;border:1px solid #E4E3DD;border-left:4px solid #9A6A2F;border-radius:0 6px 6px 0;padding:12px 16px;margin:10px 0;font-size:13.5px;line-height:1.9;}
-  .song b{color:#9A6A2F;}
-  .dialogue{background:#f5f5f0;border-radius:6px;padding:10px 14px;font-size:13.5px;margin:8px 0;}
-  .dialogue .q{color:#5F6670;}
-  .dialogue .a{color:#1e3a5f;font-weight:600;}
-  @media (max-width:800px){
-    .layout{grid-template-columns:1fr;}
-    nav{position:static;height:auto;border-right:none;border-bottom:1px solid #E4E3DD;}
-    nav ol{display:flex;flex-wrap:wrap;gap:4px;}
-    nav .phase{display:none;}
-    nav ol li a{font-size:11.5px;padding:4px 8px;}
-    main{padding:20px 16px;}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d4f7a 100%);
+    min-height: 100vh;
+    padding: 60px 20px;
+    color: #1a1b1c;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  header { text-align: center; color: #fff; margin-bottom: 50px; }
+  header h1 { font-size: 32px; margin-bottom: 12px; letter-spacing: 2px; }
+  header p { font-size: 15px; opacity: 0.85; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 28px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+  }
+  .card .icon { font-size: 36px; margin-bottom: 16px; }
+  .card h2 { font-size: 20px; color: #1e3a5f; margin-bottom: 10px; }
+  .card p {
+    font-size: 14px;
+    color: #5F6670;
+    line-height: 1.7;
+    flex: 1;
+  }
+  .card .go {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #1e3a5f;
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    margin-top: 50px;
   }
 </style>
 </head>
 <body>
-<div class="layout">
+  <div class="container">
+    <header>
+      <h1>軍事知識小站</h1>
+      <p>三份整理好的筆記，點卡片進入</p>
+    </header>
 
-  <nav>
-    <div class="brand">義務役生存指南</div>
-    <div class="sub">4 個月軍事訓練役・章節索引</div>
-    <div class="phase">開始前</div>
-    <ol>
-      <li><a href="#overview">1. 整體流程</a></li>
-      <li><a href="#units">2. 部隊地圖</a></li>
-      <li><a href="#special">3. 特殊軍種</a></li>
-    </ol>
-    <div class="phase">入營前準備</div>
-    <ol>
-      <li><a href="#luggage">4. 行李清單</a></li>
-      <li><a href="#fitness">5. 體能鑑測標準</a></li>
-      <li><a href="#qual">6. 新訓課目鑑測</a></li>
-    </ol>
-    <div class="phase">新訓五週</div>
-    <ol>
-      <li><a href="#week">7. 五週時程</a></li>
-      <li><a href="#count">8. 答數與口令</a></li>
-      <li><a href="#song">9. 軍歌</a></li>
-      <li><a href="#week1">10. 第一週守則</a></li>
-    </ol>
-    <div class="phase">規則與人際</div>
-    <ol>
-      <li><a href="#senior">11. 學長制現況</a></li>
-      <li><a href="#rule">12. 手機・收假・懲罰</a></li>
-      <li><a href="#draft">13. 下部隊抽籤</a></li>
-      <li><a href="#mind">14. 身心適應</a></li>
-    </ol>
-    <div class="phase">關係與省思</div>
-    <ol>
-      <li><a href="#gf">15. 給女友</a></li>
-      <li><a href="#think">16. 在軍中想什麼</a></li>
-      <li><a href="#reflect">17. 退伍後省思</a></li>
-      <li><a href="#top10">18. 十條守則</a></li>
-    </ol>
-  </nav>
+    <div class="grid">
+      <a class="card" href="義務役新兵生存指南.html">
+        <div class="icon">🎖️</div>
+        <h2>義務役新兵生存指南</h2>
+        <p>4 個月軍事訓練役的完整生存手冊：從行李清單、新訓五週、答數口令、軍歌完整歌詞、體能鑑測、部隊地圖、特殊軍種，到給女友篇與退伍省思。</p>
+        <div class="go">進入指南 →</div>
+      </a>
 
-  <main>
-    <h1>中華民國義務役新兵生存指南</h1>
-    <div class="sub">4 個月軍事訓練役（2005 年前出生梯次適用）・整理自 PTT、Dcard、Mobile01 心得文與新訓實況</div>
+      <a class="card" href="各國軍階階梯圖.html">
+        <div class="icon">🌐</div>
+        <h2>各國軍階階梯圖</h2>
+        <p>中華民國、美軍、解放軍、日本自衛隊四國軍階對照，含政戰官、士官長、連隊幹部說明。分頁籤切換，附跨國對照表。</p>
+        <div class="go">進入對照 →</div>
+      </a>
 
-    <div class="warn">
-      <b>這份指南不是官方手冊。</b>它是把過去幾梯役男在論壇上寫的真實心得、踩過的雷、學長學姊嘴過的重點，整理成一份你入營前可以先看一次、收假時也可以翻的 cheatsheet。實際規定依各新訓中心與下部隊為準。
+      <a class="card" href="軍階階級與職務對照圖.html">
+        <div class="icon">📊</div>
+        <h2>軍階階級與職務對照圖</h2>
+        <p>單一頁面整理：將官、校官、尉官、士官、士兵的階級、佩章、常見職務（班長／排長／連長／士官長／政戰官）。</p>
+        <div class="go">進入圖表 →</div>
+      </a>
     </div>
 
-    <!-- 1. 整體流程 -->
-    <h2 id="overview">1. 整體流程：4 個月在幹嘛</h2>
-    <p>4 個月軍事訓練役分成兩段：</p>
-    <table>
-      <tr><th>階段</th><th>時間</th><th>在哪</th><th>在做什麼</th></tr>
-      <tr><td><b>新訓中心</b></td><td>5 週</td><td>成功嶺（台中）／關西（新竹）／官田（台南）</td><td>從零教起：基本教練、步槍、刺槍、戰鬥教練、野戰、震撼教育、毒氣室</td></tr>
-      <tr><td><b>下部隊</b></td><td>11 週</td><td>抽籤決定</td><td>真正進入一個連隊，過規律的兵生活、站衛哨、跑戰鬥位置</td></tr>
-    </table>
-    <div class="tip">過來人共識：<b>新訓 5 週是最痛苦的</b>，尤其是前 10 天。撐過新訓就像吃甘蔗，愈後面愈甜。下部隊反而因為節奏固定、同梯熟了、放假次數多了，好過很多。</div>
-
-    <!-- 2. 部隊地圖 -->
-    <h2 id="units">2. 哪些單位特別操？</h2>
-    <table>
-      <tr><th>單位類型</th><th>代表番號／位置</th><th>為什麼操</th></tr>
-      <tr><td class="no">外島守備部隊</td><td>金防部（金本、烈嶼）、馬防部（南竿、北竿、東引、莒光）、東沙、南沙</td><td>離島、天候差、休假要搭飛機或船、站衛哨距離長、離家遠。<b>東引被公認是地獄等級</b>。</td></tr>
-      <tr><td class="no">前線聯兵旅</td><td>關渡指揮部（淡水、北海岸）、機步 269（桃園楊梅）、機步 234（台中）、333 機步（台中）、109 機步（屏東）</td><td>對岸第一線，演訓多、夜間行軍多、單兵戰鬥教練最紮實。</td></tr>
-      <tr><td>裝甲旅</td><td>542 裝甲（新竹）、586 裝甲（台中）</td><td>體力要求比步兵低，但保養坦克很操，夏天車內 50 度。</td></tr>
-      <tr><td>砲兵、資通、化學兵</td><td>各軍團砲指部、資電營</td><td>技術性高、體力中等，室內工作比例高。</td></tr>
-      <tr><td>後勤、留守、後備旅</td><td>各後備指揮部、營區留守班</td><td>相對涼缺，主要做行政、點召、檔案管理。</td></tr>
-    </table>
-
-    <h3>哪個新訓中心最硬？</h3>
-    <table>
-      <tr><th>新訓中心</th><th>位置</th><th>過來人評價</th></tr>
-      <tr><td>成功嶺</td><td>台中烏日</td><td>規模最大、設備最齊全，課表標準化。夏天熱到中暑。</td></tr>
-      <tr><td>關西</td><td>新竹關西</td><td>山區潮濕、冬天冷，操課標準跟成功嶺差不多。</td></tr>
-      <tr><td>官田</td><td>台南官田</td><td>南部炎熱，野戰課程多在台南丘陵地帶。</td></tr>
-    </table>
-
-    <!-- 3. 特殊軍種 -->
-    <h2 id="special">3. 特殊軍種與精銳單位</h2>
-    <table>
-      <tr><th>單位</th><th>俗稱</th><th>在做什麼</th><th>義務役抽得到嗎</th></tr>
-      <tr><td><b>海軍陸戰隊</b></td><td>「陸戰隊」</td><td>66 旅（桃園）、99 旅（高雄）。兩棲登陸、灘頭作戰，體能要求全軍最高。</td><td class="no">4 個月役抽不到本科。</td></tr>
-      <tr><td><b>空降特戰指揮部</b></td><td>「傘兵」</td><td>空降、空中突擊、特種作戰，要跳傘訓練。</td><td class="no">幾乎都是志願役。</td></tr>
-      <tr><td><b>101 兩棲偵察營</b></td><td><b>海龍蛙兵</b></td><td>駐金門、澎湖。夜間游泳滲透、水下偵察，定位類似美軍海豹。</td><td class="no">全志願役，4 個月役根本進不去。</td></tr>
-      <tr><td><b>高空特種勤務中隊</b></td><td><b>涼山特勤隊</b></td><td>陸軍頂尖特種部隊，反恐、遠程滲透、狙擊。</td><td class="no">志願役精選中的精選。</td></tr>
-      <tr><td><b>憲兵特勤隊</b></td><td>「夜鷹」</td><td>反恐、反劫機、要員保護。</td><td class="no">志願役。</td></tr>
-      <tr><td><b>海軍艦艇兵</b></td><td>「跑船的」</td><td>上軍艦值勤，幾個月在海上。</td><td>4 個月役有機會抽到岸勤，但不是艦上主力。</td></tr>
-      <tr><td><b>空軍基地勤務</b></td><td>「地勤」</td><td>基地警衛、機房保全、跑道維護。環境相對現代。</td><td>4 個月役常抽到，涼缺。</td></tr>
-    </table>
-    <div class="warn"><b>想挑戰陸戰、傘兵、蛙人？</b>那是<b>志願役</b>的路——入伍後簽志願役、通過體檢、進特戰訓中心篩選。4 個月義務役男在這邊的定位是「基礎戰鬥力補充」，不是「挑戰自我」。</div>
-
-    <!-- 4. 行李 -->
-    <h2 id="luggage">4. 入營行李：必帶 vs 禁帶</h2>
-    <h3>必帶（少一樣都會哭）</h3>
-    <table>
-      <tr><th>類別</th><th>項目</th><th>備註</th></tr>
-      <tr><td>證件</td><td>入營通知單、身份證、健保卡、印章、郵局／銀行帳號影本</td><td>帳號很重要，薪餉要匯進去</td></tr>
-      <tr><td>衣物</td><td>黑色襪子 5～6 雙、黑色內衣褲 3～4 件、黑色短袖內搭、黑色拖鞋（無裝飾款）</td><td>營區配發軍服，貼身衣物自己帶</td></tr>
-      <tr><td>盥洗</td><td>牙刷、牙膏、洗面乳、沐浴乳、毛巾 2 條、刮鬍刀、棉花棒</td><td>全部用分裝罐、透明袋裝</td></tr>
-      <tr><td>文具</td><td>黑色原子筆 2 支、小記事本</td><td>寫家書、心得、檢討報告都要用</td></tr>
-      <tr><td>醫療</td><td>慣用處方藥（附醫生證明）、OK 繃、痠痛貼布</td><td>隱形眼鏡建議換框架眼鏡，訓練時隱形會裂</td></tr>
-      <tr><td>手機</td><td>一只手機 + 充電線</td><td>入營當天就被沒收，週末才發還</td></tr>
-      <tr><td>小錢</td><td>現金 500～1000 元</td><td>營區福利社買個飲料、泡麵用</td></tr>
-    </table>
-    <h3>禁帶（帶了會被當眾沒收，還被記一筆）</h3>
-    <table>
-      <tr><th>品項</th><th>為什麼</th></tr>
-      <tr><td class="no">菸、打火機、電子煙</td><td>火災風險，抓到直接獎懲</td></tr>
-      <tr><td class="no">零食、罐頭、手搖飲</td><td>過敏、鼠患、蟲患，營區統一配給</td></tr>
-      <tr><td class="no">玻璃容器</td><td>摔破危險，會劃傷人</td></tr>
-      <tr><td class="no">平板、筆電、遊戲主機</td><td>不會讓你帶去寢室</td></tr>
-      <tr><td class="no">智慧手錶、AirPods</td><td>藍芽裝置在營區管制</td></tr>
-      <tr><td class="no">考試書、研究報告、論文</td><td><b>過來人最大的坑：</b>帶了根本不會做，那種「我在軍中也要精進自己」的無力感會讓你崩潰</td></tr>
-      <tr><td class="no">過多衣物、名牌、飾品</td><td>會被沒收或要求寄回家</td></tr>
-    </table>
-
-    <!-- 5. 體能鑑測 -->
-    <h2 id="fitness">5. 體能鑑測標準（333 制）</h2>
-    <p>新訓結訓前會測體能，目前國軍通用的是「333」標準。4 個月役男原則上及格就好，不要追求滿分。</p>
-    <table>
-      <tr><th>項目</th><th>及格標準（男生）</th><th>滿分／優良</th><th>備註</th></tr>
-      <tr><td><b>3000 公尺跑走</b></td><td>14 分 30 秒內</td><td>12 分半以內</td><td>可以走，但不能停。這是大家最容易被當的一關。</td></tr>
-      <tr><td><b>俯臥撑</b></td><td>1 分鐘 30 下</td><td>1 分鐘 50 下</td><td>胸部要貼地、屁股不能撅高</td></tr>
-      <tr><td><b>仰臥起坐</b></td><td>1 分鐘 35 下</td><td>1 分鐘 50 下</td><td>手肘要碰到膝蓋、肩胛骨要貼地</td></tr>
-      <tr><td><b>引體向上</b></td><td>5 下</td><td>12 下</td><td>正手、下巴過槓、下放手臂伸直</td></tr>
-    </table>
-    <div class="tip">
-      <b>入營前 2 個月開始墊：</b>每週跑 3 次 3000 公尺、做 2 次肌力（伏地挺身＋仰臥起坐＋引體向上）。不要臨時抱佛腳，受傷反而更慘。體重過重、膝蓋不好的人，入營前先去看醫生，體檢時誠實申報。
-    </div>
-
-    <!-- 6. 新訓課目鑑測 -->
-    <h2 id="qual">6. 新訓課目鑑測標準</h2>
-    <table>
-      <tr><th>課目</th><th>及格標準</th><th>注意事項</th></tr>
-      <tr><td><b>步槍射擊（T91 / T65K2）</b></td><td>16 發中 6 發</td><td>聽口令比什麼都重要。2025 年 9 月成功嶺才發生未關保險走火重傷事件，變換姿勢前一定先關保險。</td></tr>
-      <tr><td><b>基本教練</b></td><td>立正稍息、轉法、敬禮、行列動作標準</td><td>記口訣、跟著做，不要自創動作。</td></tr>
-      <tr><td><b>戰鬥教練</b></td><td>匍匐前進、側臥、臥倒、隊形運動</td><td>穿長袖軍服保護，膝肘會磨傷。</td></tr>
-      <tr><td><b>刺槍術</b></td><td>刺、挑、絆三式做標準</td><td>槍托要確實擊出，不要甩槍。</td></tr>
-      <tr><td><b>野戰行軍</b></td><td>全副武裝走 5～10 公里不掉隊</td><td>水要帶夠、鞋要穿慣、不要逞強用新鞋。</td></tr>
-      <tr><td><b>震撼教育</b></td><td>25 公尺匍匐穿越網下，頭上空包彈、旁邊爆破</td><td>趴下就往前爬，不要回頭看。聽班長口令。</td></tr>
-      <tr><td><b>毒氣室</b></td><td>戴防毒面具穿越毒氣室</td><td>不要偷開眼、不要偷換氣。出門後大量飲水。</td></tr>
-      <tr><td><b>戰傷救護</b></td><td>包紮、止血、搬運傷患</td><td>記口訣就好，實作不難。</td></tr>
-    </table>
-
-    <!-- 7. 五週時程 -->
-    <h2 id="week">7. 新訓五週會發生什麼</h2>
-    <table>
-      <tr><th>週次</th><th>主題</th><th>重點</th></tr>
-      <tr><td><b>第 1 週</b></td><td>Shock Week 衝擊週</td><td>剃髮、點名、分隊、領裝、教基本口令。手機完全沒收。這週不要問「為什麼」，跟著做就對。</td></tr>
-      <tr><td><b>第 2 週</b></td><td>基本教練 + 槍械</td><td>站軍姿、踢正步、敬禮。第一次摸 T65K2／T91，學習分解結合、保養。</td></tr>
-      <tr><td><b>第 3 週</b></td><td>戰鬥教練 + 刺槍</td><td>臥倒、匍匐前進、側臥、隊形運動。刺槍術練「刺、挑、絆」。膝蓋、手肘開始痛。</td></tr>
-      <tr><td><b>第 4 週</b></td><td>野戰 + 震撼教育</td><td>全副武裝行軍。震撼教育：25 公尺網下匍匐、頭上空包彈、旁邊爆破。這週操到最高點。</td></tr>
-      <tr><td><b>第 5 週</b></td><td>驗收 + 結訓</td><td>各項鑑測。結訓典禮，家長可來看，之後分發下部隊。</td></tr>
-    </table>
-
-    <!-- 8. 答數與口令（C 版完整版） -->
-    <h2 id="count">8. 答數、口令與基本教練</h2>
-    <p>答數不是「喊大聲」而已，是一套聲音訊號系統——班長用聲音判斷你有沒有在狀況內、你們排夠不夠「整」。</p>
-
-    <h3>8.1 四種答數形式</h3>
-    <table>
-      <tr><th>形式</th><th>怎麼喊</th><th>用途</th></tr>
-      <tr><td><b>個人答數</b></td><td>一個人獨喊「一！二！三！四！」</td><td>單獨受測、帶唱、出列</td></tr>
-      <tr><td><b>交互答數</b></td><td>兩人輪答：甲「一！二！」乙「三！四！」</td><td>排面整齊、行軍時</td></tr>
-      <tr><td><b>集體答數</b></td><td>全班齊聲</td><td>早晚點名、隊集合</td></tr>
-      <tr><td><b>報數</b></td><td>從頭到尾「一！二！三！四！……」依序</td><td>班長要人數時</td></tr>
-    </table>
-
-    <h3>8.2 答數的韻律口訣</h3>
-    <div class="dialogue">
-      <div class="q">一</div><div class="a">提氣（從丹田往上衝，不要用喉嚨擠）</div>
-    </div>
-    <div class="dialogue">
-      <div class="q">二</div><div class="a">放鬆（自然放開，不要繃緊）</div>
-    </div>
-    <div class="dialogue">
-      <div class="q">三</div><div class="a">合（全班聲音合在一起，不要各唱各的）</div>
-    </div>
-    <div class="dialogue">
-      <div class="q">四</div><div class="a">收（乾脆收尾，不要拖尾音）</div>
-    </div>
-    <p style="font-size:13px;color:#5F6670;">班長最常電的三個點：「一」太小聲→「沒有氣！」；「四」拖尾→「尾音不要拖！」；全班不齊→「像一條腸子！」</p>
-
-    <h3>8.3 應答短語對白（比答數更常用）</h3>
-    <table>
-      <tr><th>班長問</th><th>你答</th><th>語氣</th></tr>
-      <tr><td>「聽到沒有？」</td><td>「是！」</td><td>果斷</td></tr>
-      <tr><td>「了解了沒有？」</td><td>「了解！」</td><td>果斷</td></tr>
-      <tr><td>「可不可以做得更好？」</td><td>「可以！」</td><td>有自信</td></tr>
-      <tr><td>「剛才有沒有精神？」</td><td>「有！」</td><td>洪亮</td></tr>
-      <tr><td>點名「王小明！」</td><td>「有！」</td><td>立刻、不猶豫</td></tr>
-      <tr><td>「給我一個！」（出列示範）</td><td>「是！」</td><td>快步出列</td></tr>
-      <tr><td>「有沒有問題？」</td><td>「沒有！」</td><td>確實</td></tr>
-    </table>
-
-    <h3>8.4 呼號帶動氣氛</h3>
-    <p>班長會突然喊一些「有沒有！」的句子，這不是問真話，是要你把士氣喊出來：</p>
-    <div class="dialogue">
-      <div class="q">班長：「誰是陸軍最勇猛的單位？！」</div>
-      <div class="a">全班：「我們！」</div>
-    </div>
-    <div class="dialogue">
-      <div class="q">班長：「今天操課會不會怕？！」</div>
-      <div class="a">全班：「不怕！」</div>
-    </div>
-    <div class="dialogue">
-      <div class="q">班長：「有沒有榮譽？！」</div>
-      <div class="a">全班：「有！」</div>
-    </div>
-
-    <h3>8.5 軍人十二德目口號（完整 12 字）</h3>
-    <p>這是國軍傳統的「軍人精神十二項」，新訓一定會帶著喊。<b>不是只有前四個字</b>，完整是 12 個字、分三組，班長一帶到底：</p>
-
-    <table>
-      <tr><th>組</th><th>四個字</th><th>類型</th></tr>
-      <tr><td><b>第一組</b></td><td>雄！壯！威！武！嚴！肅！剛！直！</td><td>外在氣質</td></tr>
-      <tr><td><b>第二組</b></td><td>安！靜！堅！強！確！實！速！捷！</td><td>行為要求</td></tr>
-      <tr><td><b>第三組</b></td><td>沈！著！忍！耐！機！警！勇！敢！</td><td>內在修養</td></tr>
-    </table>
-
-    <p>班長帶法：</p>
-    <div class="dialogue">
-      <div class="q">班長：「軍人要有——！」</div>
-      <div class="a">全班：「雄！壯！威！武！嚴！肅！剛！直！安！靜！堅！強！確！實！速！捷！沈！著！忍！耐！機！警！勇！敢！」</div>
-    </div>
-
-    <p>每個字斷開、有力、一個字一個字砸出來，不要一口氣唸完。</p>
-
-    <table>
-      <tr><th>字</th><th>意思</th></tr>
-      <tr><td><b>雄壯</b></td><td>聲音大、有氣勢</td></tr>
-      <tr><td><b>威武</b></td><td>姿態挺拔、有架勢</td></tr>
-      <tr><td><b>嚴肅</b></td><td>表情正經、不嘻嘻哈哈</td></tr>
-      <tr><td><b>剛直</b></td><td>正直、不拐彎、不油條</td></tr>
-      <tr><td><b>安靜</b></td><td>該安靜的時候完全安靜</td></tr>
-      <tr><td><b>堅強</b></td><td>意志堅定、不輕易被操到崩潰</td></tr>
-      <tr><td><b>確實</b></td><td>交代的事確實做到、不馬虎</td></tr>
-      <tr><td><b>速捷</b></td><td>反應快、動作俐落、不拖泥帶水</td></tr>
-      <tr><td><b>沈著</b></td><td>緊張時冷靜、不慌亂</td></tr>
-      <tr><td><b>忍耐</b></td><td>能吃苦、能扛、能撐</td></tr>
-      <tr><td><b>機警</b></td><td>警覺性高、注意周遭</td></tr>
-      <tr><td><b>勇敢</b></td><td>不怕困難、敢承擔</td></tr>
-    </table>
-
-    <div class="tip">
-      <b>為什麼這麼有名：</b>康康的台語歌《又見兵變》把這 12 個字寫進歌詞裡，所以很多當過兵的人一聽就會背。你以後聽到這首歌，就知道是在唱這 12 個字。
-    </div>
-
-    <h3>8.6 基本口令動作</h3>
-    <table>
-      <tr><th>口令</th><th>動作</th><th>要點</th></tr>
-      <tr><td>立正</td><td>雙腳併攏、挺胸、雙手貼褲縫、下顎微收、目光平視</td><td>脖子不要縮、肩膀不要聳</td></tr>
-      <tr><td>稍息</td><td>左腳順尖伸出約一腳距離、重心放右腳</td><td>只有腳動、上半身保持立正</td></tr>
-      <tr><td>向右（左）轉</td><td>以右（左）腳跟為軸，旋轉 90 度</td><td>靠腳要發出「噠」一聲</td></tr>
-      <tr><td>向後轉</td><td>向右旋轉 180 度</td><td>不是跳轉，是旋轉</td></tr>
-      <tr><td>敬禮</td><td>右手舉起、食指接帽緣、手腕平、手臂與肩同高</td><td>看著對方眼睛、停留一秒再放下</td></tr>
-      <tr><td>行進</td><td>起步走、跟著前後距離</td><td>前後對正、左右看齊</td></tr>
-    </table>
-
-    <h3>8.7 自己一個人怎麼練答數</h3>
-    <ol class="rule">
-      <li><b>腳打拍子：</b>用腳跟「一、二、三、四」的節奏，把聲音放進去。</li>
-      <li><b>手壓肚子：</b>喊「一」的時候感覺肚子繃緊，聲音從肚子出來，不是喉嚨。</li>
-      <li><b>對牆喊：</b>對著牆喊「一！」聽回音，回音清楚表示聲音扎實。</li>
-      <li><b>每天 5 分鐘：</b>入營前一週開始練，到營區第一天就不會羞於開口。</li>
-    </ol>
-
-    <!-- 9. 軍歌（C 版完整版） -->
-    <h2 id="song">9. 軍歌與唱歌規矩</h2>
-    <p>軍歌不是為了好聽，是為了「大家一起唱的時候，人會變成一個整體」。下面把分類、場景、班長話術、必唱歌詞一次講完。</p>
-
-    <h3>9.1 五大類型</h3>
-    <table>
-      <tr><th>類型</th><th>例子</th><th>什麼時候唱</th></tr>
-      <tr><td><b>軍種軍歌</b></td><td>陸軍軍歌、海軍軍歌、空軍軍歌、陸戰隊隊歌</td><td>重要典禮、升旗、開飯前</td></tr>
-      <tr><td><b>戰鬥精神歌曲</b></td><td>前進戰士、殺敵致果、黃埔男兒誌</td><td>行軍、體能訓練、晚點名</td></tr>
-      <tr><td><b>團／旅隊歌</b></td><td>每個新訓中心、每個旅自己的歌</td><td>行軍、重要場合</td></tr>
-      <tr><td><b>士氣歌／改編</b></td><td>弟兄們、改編老歌</td><td>休閒時間、晚會</td></tr>
-      <tr><td><b>答數歌</b></td><td>「一二三四、一二三四！」</td><td>整隊時、提振精神</td></tr>
-    </table>
-
-    <h3>9.2 唱歌的場景（每天一定碰到）</h3>
-    <table>
-      <tr><th>時段</th><th>做什麼</th></tr>
-      <tr><td><b>開飯前</b></td><td>全班列隊唱一首歌，唱完才能進餐廳</td></tr>
-      <tr><td><b>行軍時</b></td><td>邊走邊唱，不然隊伍會睡</td></tr>
-      <tr><td><b>晚點名後</b></td><td>唱完才解散</td></tr>
-      <tr><td><b>重要典禮</b></td><td>升旗、結訓、校閱</td></tr>
-    </table>
-
-    <h3>9.3 班長常電的話術與應對</h3>
-    <table>
-      <tr><th>班長說</th><th>意思</th><th>你該做的</th></tr>
-      <tr><td>「聲音太小！有沒有吃飯？」</td><td>再唱一次、更大聲</td><td>深吸一口氣、下一段用力</td></tr>
-      <tr><td>「這是唱歌還是吊喪？！」</td><td>節奏太慢、表情太鬱</td><td>節奏加快、表情放開</td></tr>
-      <tr><td>「再唱一次！」</td><td>不滿意，重來</td><td>不要臉臭，立刻重來</td></tr>
-      <tr><td>「嘴打開！不要用鼻子哼！」</td><td>你在含滷蛋</td><td>嘴巴張開、咬字清楚</td></tr>
-      <tr><td>「哪一排聲音最小？」</td><td>在找豬隊友</td><td>不要回頭看，趕快加大聲音</td></tr>
-    </table>
-
-    <h3>9.4 必唱軍歌歌詞</h3>
-    <p style="font-size:13px;color:#5F6670;">以下已查證完整的列全文；新訓中只唱開場段的，標註「開場段」。完整歌詞以入營後部隊教唱為準。</p>
-
-    <div class="song">
-      <b>陸軍軍歌</b>（何志浩詞、樊燮華曲・1967 年公布・全文）<br>
-      風雲起 山河動<br>
-      黃埔建軍聲勢雄<br>
-      革命壯士矢精忠<br>
-      金戈鐵馬 百戰沙場<br>
-      安內攘外作先鋒<br>
-      縱橫掃蕩 復興中華<br>
-      所向無敵立大功<br><br>
-      旌旗耀 金鼓響<br>
-      龍騰虎躍軍威壯<br>
-      忠誠精實風紀揚<br>
-      機動攻勢 勇敢沈著<br>
-      奇襲主動智謀廣<br>
-      肝膽相照 團結自強<br>
-      殲滅敵寇 凱歌唱
-    </div>
-
-    <div class="song">
-      <b>海軍軍歌</b>（全文）<br>
-      乘長風 破巨浪<br>
-      我海軍勇向前航<br>
-      弟兄們同舟共濟<br>
-      萬眾一心海洋上<br><br>
-      忠義果敢志氣昂<br>
-      陽光普照全艙<br>
-      長空萬里 汪洋浩蕩<br>
-      冬陽春暖 魚躍雁行<br>
-      心胸舒暢<br>
-      四海一家皆兄弟<br>
-      友誼長存在萬邦
-    </div>
-
-    <div class="song">
-      <b>海軍陸戰隊隊歌</b>（楊厚綵詞、張錦鴻曲・全文）<br>
-      為海軍收戰果<br>
-      為陸軍作先鋒<br>
-      空中炸彈、艦上砲聲、轟隆隆隆隆<br><br>
-      水上策飛馬<br>
-      灘頭建奇功<br>
-      男兒壯志最豪雄<br>
-      高揚青天白日滿地紅<br>
-      四海起雄風
-    </div>
-
-    <div class="song">
-      <b>空軍軍歌</b>（開場段，新訓最常唱）<br>
-      凌雲禦風，列翼蒼穹，我空軍，真英雄……<br>
-      <span style="color:#8a9099;">其餘段落入營後會教。</span>
-    </div>
-
-    <div class="song">
-      <b>前進戰士</b>（開場段，行軍必唱）<br>
-      前進前進前進，戰士的榮譽在前進……<br>
-      <span style="color:#8a9099;">節奏明快，行軍累的時候靠它撐。完整歌詞以部隊教唱為準。</span>
-    </div>
-
-    <div class="song">
-      <b>殺敵致果</b>（開場段，精神戰力課常唱）<br>
-      風蕭蕭兮易水寒，壯士一去兮不復還……<br>
-      <span style="color:#8a9099;">這段出自戰國策荊軻易水送別，氣魄最足。</span>
-    </div>
-
-    <div class="song">
-      <b>黃埔男兒誌</b>（開場段）<br>
-      黃埔男兒，國民革命的鬥士……<br>
-      <span style="color:#8a9099;">黃埔精神代表曲，歌詞要有感情地唱。</span>
-    </div>
-
-    <div class="tip">
-      <b>給新兵的話：</b>不要覺得唱歌很尷尬。開飯前不唱完不能吃、行軍不唱會睡、晚點名不唱不能解散——它是你一天裡跟同梯最有「我們是同一伙」感覺的時刻。兩週後你會發現，自己沒唱過這首歌的早晨反而怪怪的。
-    </div>
-
-    <!-- 10. 第一週守則 -->
-    <h2 id="week1">10. 第一週存活守則</h2>
-    <ol class="rule">
-      <li><b>聽口令、不要問為什麼。</b>「快、慢、再一次」不是針對你，是群體節奏。</li>
-      <li><b>主動出聲。</b>答數要大、敬禮要確實、報數要清楚。這不是表現欲，是讓班長知道你「在」。</li>
-      <li><b>不要逞強。</b>頭暈、想吐、膝蓋痛，立刻舉手回報。裝沒事最後只會送醫務所、錯過測驗、被當弱兵。</li>
-      <li><b>同梯是你這輩子最快熟的一群人。</b>一起蹲、一起罰、一起吃饅頭配醬瓜，三天內會變成有革命情感的朋友。不要搞小團體、不要霸凌別人。</li>
-      <li><b>不要偷拍、不要講閱聽人不存在的話。</b>寢室、廁所、營區都有監視器。手機週末才還你，在營區拍攝上傳社媒是重責，可能送軍法。</li>
-      <li><b>睡覺就是睡覺。</b>燈會關、門會關、但你會被叫起來站衛哨。訓練時間體力要分配，不要晚上偷聊天。</li>
-      <li><b>大小便準時。</b>作息固定，在外面訓練想上廁所要報告，不要憋到出事。</li>
-    </ol>
-
-    <!-- 11. 學長制 -->
-    <h2 id="senior">11. 學長制與人際：現在已經不一樣了</h2>
-    <p>台灣軍中的「學長制」在 2013 年洪仲丘事件之後被大幅改革：</p>
-    <table>
-      <tr><th>舊式（電影版）</th><th>現在（實際）</th></tr>
-      <tr><td>學長可以隨時屌你、叫你做雜務</td><td>班長（士官）才有管教權，學長（同梯資深）不能動手</td></tr>
-      <tr><td>逼吃菸、逼喝、霸凌</td><td><b>是違法的</b>，有申訴專線、性平三級、心理諮商</td></tr>
-      <tr><td>學長說什麼都對</td><td>學長講話可以參考，但你有疑慮直接找輔導長、政戰官</td></tr>
-    </table>
-    <div class="tip"><b>真正的潛規則：</b>禮貌做到就好。長官經過會問聲好、同梯叫你幫個小忙能幫就幫。<b>不要當白目，也不要當舔狗。</b></div>
-
-    <!-- 12. 規則 -->
-    <h2 id="rule">12. 手機、收假、常見懲罰</h2>
-    <table>
-      <tr><th>事項</th><th>規則</th></tr>
-      <tr><td><b>新訓中心手機</b></td><td>入營當天沒收，週末／假日開放 1～2 小時，用完就收回。</td></tr>
-      <tr><td><b>下部隊手機</b></td><td>目前多數部隊下午 5 點後～就寢前開放，夜間仍要統一保管。</td></tr>
-      <tr><td><b>外休假</b></td><td>新訓結訓後開始有。下部隊後通常週六日可外宿，週日晚點前歸營。</td></tr>
-      <tr><td><b>收假</b></td><td><b>絕對不要遲到。</b>這是軍中最嚴的規矩之一，遲到 10 分鐘可能整個排被罰、下個月放假取消。</td></tr>
-      <tr><td><b>常見懲罰</b></td><td>點名、罰跪（已少見）、勞動服務、禁足、寫悔過書、記申誡。嚴重者送軍法。</td></tr>
-      <tr><td><b>救命申訴</b></td><td>政戰官、輔導長、軍紀申訴專線。真的被霸凌、被騷擾，不要隱忍。</td></tr>
-    </table>
-
-    <!-- 13. 下部隊抽籤 -->
-    <h2 id="draft">13. 下部隊抽籤：哪些是坑、哪些是寶</h2>
-    <table>
-      <tr><th>單位類型</th><th>體能</th><th>心理壓力</th><th>過來人評價</th></tr>
-      <tr><td>野戰步兵旅</td><td class="no">高</td><td>高</td><td>最累但同梯感情最好，退伍後印象最深</td></tr>
-      <tr><td>裝甲、砲兵</td><td>中高</td><td>中</td><td>技術性高、體力負荷比步兵小</td></tr>
-      <tr><td>憲兵</td><td>中</td><td>中高</td><td>站哨多、服裝儀容要求嚴、環境相對現代</td></tr>
-      <tr><td>政戰、藝工</td><td class="yes">低</td><td>中</td><td>熱門缺額少，要靠抽籤或專長（攝影、表演、文書）</td></tr>
-      <tr><td>行勤、文書、補給</td><td class="yes">低</td><td>低</td><td>相對涼缺，但要會電腦、文書能力</td></tr>
-      <tr><td>駕駛兵</td><td>低</td><td>低</td><td>需要軍駕照，退伍後多一張執照</td></tr>
-      <tr><td>後備、留守</td><td class="yes">低</td><td class="yes">低</td><td>相對清閒，但會被同梯嘴「爽兵」</td></tr>
-    </table>
-    <div class="tip"><b>實用策略：</b>新訓期間表現良好、多跟輔導長聊自己的專長（會電腦、會開車、會攝影、會醫療），分發時有機會被「特殊需求」調走。但 4 個月役彈性比志願役小，<b>不要期待抽到神缺，抽到什麼就認真做</b>。</div>
-
-    <!-- 14. 身心適應 -->
-    <h2 id="mind">14. 身心適應：特別給 ADHD、淺眠、焦慮體質</h2>
-    <ol class="rule">
-      <li><b>規律作息不一定是壞事。</b>對部分 ADHD 人來說，軍中「到點起床、到點吃飯、到點睡覺」反而比開放式大學職場好適應；但<b>站衛哨、夜間突發集合、長時間站崗</b>對淺眠體質是傷。</li>
-      <li><b>體檢時誠實說。</b>如果你有氣喘、癲癇、睡眠疾患、心理疾患用藥，體檢時如實申報，不要為了「過關」隱瞞。4 個月役的体位判定有完整替代方案。</li>
-      <li><b>營區有心理諮商資源。</b>現在政戰體系有三級心理輔導，真的撐不住可以找輔導長預約。這不是軟弱，是制度設計來用的。</li>
-      <li><b>同梯是你的救命繩。</b>不要一個人撐，跟旁邊那個跟你一樣快崩潰的人互相遞水、互相遮蓋。</li>
-      <li><b>退伍不是結束，是調適。</b>4 個月回到民間，前一兩週會有「時時刻刻想聽起床號」的錯亂，這是正常的。給自己兩週慢慢調回來。</li>
-    </ol>
-
-    <!-- 15. 給女友 -->
-    <h2 id="gf">15. 給女友：他在裡面的時候，你可以做什麼</h2>
-    <h3>你能做的</h3>
-    <table>
-      <tr><th>你能做的</th><th>為什麼重要</th></tr>
-      <tr><td><b>週末他打電話來，先聽他講</b></td><td>那通電話是他一整週唯一跟外面世界連結的機會。</td></tr>
-      <tr><td><b>寫手寫信</b></td><td>Email 可以被同梯看到，手寫信可以偷偷折在口袋。他在夜哨時可以掏出來看。</td></tr>
-      <tr><td><b>照顧好自己</b></td><td>他在裡面最掛心的就是「她好不好」。</td></tr>
-      <tr><td><b>跟他家人保持聯絡</b></td><td>他媽媽比你更焦慮。你陪他媽媽吃個飯，他知道了會記一輩子。</td></tr>
-      <tr><td><b>大節日要出現</b></td><td>他結訓、第一次收假、退伍那天，去營門口接他。</td></tr>
-    </table>
-    <h3>不要做的</h3>
-    <table>
-      <tr><th>不要做</th><th>為什麼</th></tr>
-      <tr><td class="no">他沒回訊息就瘋狂打電話、鬧脾氣</td><td>他不是不想回，是手機被收了。</td></tr>
-      <tr><td class="no">查勤、懷疑他跟同梯女生</td><td>新訓中心男女分班、營區管制，他根本沒機會。</td></tr>
-      <tr><td class="no">跟別人曖昧、曖昧不清</td><td>他在裡面拿著手機一分鐘，看到妳跟別人约會的動態，那種崩潰是你想像不到的。</td></tr>
-      <tr><td class="no">把他當情緒垃圾桶</td><td>他這一週已經被班長罵過三次、操了 20 公里。</td></tr>
-      <tr><td class="no">比較「我前男友當兵都會打給我」</td><td>每個單位手機開放時間不同。他能打的時候一定會打。</td></tr>
-    </table>
-    <div class="tip">
-      <b>他退伍出來那天：</b>他不會立刻變回從前那個隨傳隨到的男友。他會：
-      <ul style="margin:6px 0 0 18px;padding:0;">
-        <li>看到什麼都想吃、吃兩口又停——胃還沒調整回來。</li>
-        <li>突然聽到「答數」「向左轉」會反射動作——一兩週後會消失。</li>
-        <li>對「自由」很敏感——想在路邊站就站、想吃宵夜就吃。</li>
-        <li>變得比以前安靜，或突然很愛講軍中鳥事——都是正常。</li>
-      </ul>
-      不要第一天就要求他「回到從前」。給他兩週。
-    </div>
-
-    <!-- 16. 在軍中想什麼 -->
-    <h2 id="think">16. 在軍中可以想什麼：斷網 4 個月的禮物</h2>
-    <p>說出來你可能不信——很多退伍的人回頭想，軍中最珍貴的不是體能、不是紀律，是<strong>這是你人生中難得強制斷網、強制脫離原本生活軌道的一段時間</strong>。</p>
-    <table>
-      <tr><th>平常不會想、但在軍中會想清楚的事</th><th>為什麼是這時候想</th></tr>
-      <tr><td>畢業後到底要做什麼？</td><td>沒有 YouTube、IG、同學約吃飯轉移注意力，你只剩下自己。</td></tr>
-      <tr><td>我跟父母的關係？</td><td>你開始想起爸媽叫你起床、幫你裝便當的時候。很多人退伍後第一通電話是打回家道歉。</td></tr>
-      <tr><td>我跟女友／伴侶的未來？</td><td>你們能不能撐過 4 個月，其實已經是一場壓力測試。</td></tr>
-      <tr><td>我平常在滑手機的時候，到底在逃避什麼？</td><td>沒有手機可以滑的時候，你會發現自己其實很怕跟自己獨處。</td></tr>
-      <tr><td>我到底是什麼樣的人？</td><td>當你累到極點、被操到哭、又被同梯拉一把的時候，你會看到自己最真實的反應。</td></tr>
-    </table>
-    <h3>可以做的事</h3>
-    <ol class="rule">
-      <li><b>寫信。</b>不是寫給女友而已，寫給自己——把你現在的焦慮、懷疑、想做的事都寫下來。退伍後一年再拿出來看，會很震撼。</li>
-      <li><b>跟同梯深聊。</b>不是聊車、聊手遊、聊網路梗，是問「你未來想做什麼」。你會遇到各種背景的人。</li>
-      <li><b>觀察自己的情緒週期。</b>你會發現自己不是每天都一樣。記錄下來，這對你未來理解自己的情緒很有用。</li>
-      <li><b>身體重設。</b>4 個月規律運動、規律睡眠、清淡飲食——很多人退伍後體脂掉 5%。這是你人生中少有的「身體被重開機」的時光。</li>
-    </ol>
-
-    <!-- 17. 退伍後省思 -->
-    <h2 id="reflect">17. 退伍後大家常有的省思</h2>
-    <table>
-      <tr><th>大家的省思</th><th>為什麼</th></tr>
-      <tr><td><b>原來「自由」這麼珍貴</b></td><td>能在路邊隨便站、想洗澡洗多久就洗多久——這些平常被視為理所當然的事，出來後第一次覺得很香。</td></tr>
-      <tr><td><b>同梯是一輩子的朋友</b></td><td>一起蹲、一起被罰、一起躲過班長視線偷吃泡麵的人，跟大學同學、同事的感情不一樣。</td></tr>
-      <tr><td><b>對父母的重新感謝</b></td><td>你終於體會到「有人幫你準備好一切」是多幸福的事。很多人退伍後第一頓飯是回家吃媽媽煮的，邊吃邊哭。</td></tr>
-      <tr><td><b>對職業軍人的改觀</b></td><td>以前你以為軍人都是「當不了兵才去當兵」，自己下去才知道——那些士官長在裡面待了 20 年，是真的有東西。</td></tr>
-      <tr><td><b>對「紀律」的重新認識</b></td><td>紀律不是束縛，是讓你不用想就可以動作的省能量系統。你出來後可能會發現自己東西比較整齊、時間觀念比較好。</td></tr>
-      <tr><td><b>自己比想像中堅強</b></td><td>你以為自己會崩潰、會逃兵——結果你沒有。你撐過了震撼教育、夜哨、收假前的焦慮。</td></tr>
-      <tr><td><b>其實沒什麼大不了</b></td><td>4 個月前你覺得天要塌下來，4 個月後你發現自己回來上班、上課、追劇，日子照過。</td></tr>
-    </table>
-
-    <!-- 18. 十條守則 -->
-    <h2 id="top10">18. 新兵十條守則（背起來）</h2>
-    <ol class="rule">
-      <li>帶該帶的，其他不要帶。</li>
-      <li>聽口令、不要問為什麼、不要槓長官。</li>
-      <li>身體不舒服就說，不要裝。</li>
-      <li>手機不要偷藏，拍到的影片不要上傳。</li>
-      <li>收假永遠提早 30 分鐘到營門。</li>
-      <li>同梯不要搞小圈圈、不要霸凌、不要告密。</li>
-      <li>學長講話聽、但不要當舔狗。</li>
-      <li>步槍保養、棉被摺豆腐、內務整齊，是你的顏面。</li>
-      <li>被欺負找政戰官、輔導長，不要自己吞。</li>
-      <li><b>4 個月真的很短，數日子過。</b></li>
-    </ol>
-
-    <div class="warn" style="margin-top:20px;">
-      <b>給女友的最後一句：</b>他在裡面的時候，你會覺得這 4 個月好長。他退伍後你回頭看，會覺得「原來就這樣過了」。中間這段時間，你們能一起守住的，就會變成這段感情最紮實的一塊地基；守不住的，本來就不是那個對的人。
-    </div>
-
-    <div class="tip">
-      <b>給他的最後一句：</b>這 4 個月不是要磨掉你，是要讓你在沒有手機、沒有社群、沒有逃避的情況下，重新遇見自己。退伍那天你領到的不是兵籍牌，是一個「原來我可以」的新證書。
-    </div>
-
-    <div style="margin-top:20px;font-size:11px;color:#8a9099;line-height:1.6;">
-      本指南整理自 PTT Military 板、Dcard 兵役版、Mobile01 過來人文章，以及成功嶺新訓中心公開課程資料。各梯次、各營區規定略有差異，實際以入營通知與新訓中心說明為準。
-    </div>
-
-  </main>
-</div>
-
-<script>
-(function(){
-  var links = document.querySelectorAll('nav a');
-  var sections = [];
-  links.forEach(function(a){
-    var id = a.getAttribute('href').slice(1);
-    var el = document.getElementById(id);
-    if(el) sections.push({link:a, el:el});
-  });
-  function onScroll(){
-    var pos = window.scrollY + 40;
-    var current = sections[0];
-    sections.forEach(function(s){
-      if(s.el.offsetTop <= pos) current = s;
-    });
-    links.forEach(function(l){ l.classList.remove('active'); });
-    if(current) current.link.classList.add('active');
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
-</script>
+    <footer>
+      <p>筆記整理 · 2026</p>
+    </footer>
+  </div>
 </body>
 </html>

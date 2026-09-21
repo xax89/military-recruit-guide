@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>各國軍階階梯圖 — 分國詳細版</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{margin:0;padding:0;background:#F7F7F5;font-family:'PingFang TC','Microsoft JhengHei',sans-serif;color:#1A1B1C;}
+  .wrap{max-width:1100px;margin:0 auto;padding:24px 16px;}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px;}
+  .tabbtn{padding:10px 16px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:6px;transition:opacity .15s;}
+  .tabbtn:hover{opacity:.85;}
+  .tabbtn.active{outline:3px solid #1A1B1C;outline-offset:2px;}
+  .panel{display:none;}
+  .panel.active{display:block;}
+  .grid-head{display:grid;grid-template-columns:90px 1.1fr 1.4fr 90px;gap:0;font-size:12px;color:#5F6670;padding:8px 10px;border-bottom:2px solid #E4E3DD;font-weight:600;}
+  .row{display:grid;grid-template-columns:90px 1.1fr 1.4fr 90px;gap:0;align-items:stretch;}
+  .row + .row{margin-top:4px;}
+  .branch{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;writing-mode:vertical-rl;letter-spacing:4px;color:#fff;}
+  .grade{padding:10px 14px;font-size:14px;color:#fff;}
+  .grade .name{font-weight:600;font-size:15px;}
+  .grade .sub{font-size:11px;opacity:.8;margin-top:2px;}
+  .duty{padding:10px 14px;font-size:13px;color:#fff;display:flex;align-items:center;line-height:1.5;}
+  .mark{padding:10px 14px;font-size:12px;display:flex;align-items:center;}
+  .note{margin-top:16px;padding:14px 16px;background:#fff;border:1px solid #E4E3DD;border-radius:6px;font-size:13px;color:#5F6670;line-height:1.7;}
+  .note b{color:#1A1B1C;}
+  table.cross{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border:1px solid #E4E3DD;border-radius:6px;overflow:hidden;}
+  table.cross th{background:#1A1B1C;color:#fff;padding:10px 12px;text-align:left;font-weight:600;}
+  table.cross td{padding:8px 12px;border-bottom:1px solid #E4E3DD;}
+  table.cross tr:nth-child(even) td{background:#fcfcf9;}
+  table.cross td.lvl{font-weight:700;background:#fafaf7 !important;}
+  .muted{color:#8a9099;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div style="font-size:22px;font-weight:700;">各國軍階階梯圖</div>
+  <div style="font-size:13px;color:#5F6670;margin-top:4px;">分國詳細版 — 點上方國旗切換</div>
+
+  <!-- 導覽按鈕 -->
+  <div class="tabs">
+    <button class="tabbtn active" data-tab="roc" style="background:#1e3a5f;">🇹🇼 中華民國</button>
+    <button class="tabbtn" data-tab="us" style="background:#4a5d3a;">🇺🇸 美軍</button>
+    <button class="tabbtn" data-tab="pla" style="background:#8b2e2e;">🇨🇳 解放軍</button>
+    <button class="tabbtn" data-tab="jsd" style="background:#2c3e5a;">🇯🇵 日自衛隊</button>
+    <button class="tabbtn" data-tab="cross" style="background:#5F6670;">🔀 跨國對照</button>
+  </div>
+
+  <!-- ========== 中華民國 ========== -->
+  <div class="panel active" id="p-rocs">
+    <div style="font-size:17px;font-weight:700;margin-bottom:10px;color:#1e3a5f;">🇹🇼 中華民國國軍</div>
+
+    <div class="grid-head"><div>分支</div><div>階級</div><div>部隊常見職務</div><div>標誌</div></div>
+
+    <div class="row">
+      <div class="branch" style="background:#1e3a5f;border-radius:4px 0 0 4px;">軍官</div>
+      <div class="grade" style="background:#1e3a5f;">
+        <div class="name">一級上將</div>
+        <div class="sub">平時極少授與之最高階</div>
+      </div>
+      <div class="duty" style="background:#1e3a5f;">參謀總長（極特殊狀況）</div>
+      <div class="mark" style="background:#1e3a5f;color:#ffd97a;border-radius:0 4px 4px 0;letter-spacing:2px;">★★★★★</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#1e3a5f;"></div>
+      <div class="grade" style="background:#1e3a5f;"><div class="name">二級上將</div></div>
+      <div class="duty" style="background:#1e3a5f;">參謀總長 / 軍團司令</div>
+      <div class="mark" style="background:#1e3a5f;color:#ffd97a;letter-spacing:2px;">★★★★</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#1e3a5f;"></div>
+      <div class="grade" style="background:#1e3a5f;"><div class="name">中將</div></div>
+      <div class="duty" style="background:#1e3a5f;">軍團副司令 / 司令部參謀長</div>
+      <div class="mark" style="background:#1e3a5f;color:#ffd97a;letter-spacing:2px;">★★★</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#1e3a5f;"></div>
+      <div class="grade" style="background:#1e3a5f;"><div class="name">少將</div></div>
+      <div class="duty" style="background:#1e3a5f;">師長 / 指揮官</div>
+      <div class="mark" style="background:#1e3a5f;color:#ffd97a;letter-spacing:2px;">★★</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#2a4d75;"></div>
+      <div class="grade" style="background:#2a4d75;"><div class="name">上校</div><div class="sub">上校官</div></div>
+      <div class="duty" style="background:#2a4d75;">旅長 / 指揮官</div>
+      <div class="mark" style="background:#2a4d75;color:#ffd97a;letter-spacing:2px;">❀❀❀</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#2a4d75;"></div>
+      <div class="grade" style="background:#2a4d75;"><div class="name">中校</div></div>
+      <div class="duty" style="background:#2a4d75;">副旅長 / 營長（資深）</div>
+      <div class="mark" style="background:#2a4d75;color:#ffd97a;letter-spacing:2px;">❀❀</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#2a4d75;"></div>
+      <div class="grade" style="background:#2a4d75;"><div class="name">少校</div></div>
+      <div class="duty" style="background:#2a4d75;">營長 / 副營長</div>
+      <div class="mark" style="background:#2a4d75;color:#ffd97a;letter-spacing:2px;">❀</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#36618f;"></div>
+      <div class="grade" style="background:#36618f;"><div class="name">上尉</div><div class="sub">尉官</div></div>
+      <div class="duty" style="background:#36618f;">連長</div>
+      <div class="mark" style="background:#36618f;color:#ffd97a;letter-spacing:2px;">▬▬▬</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#36618f;"></div>
+      <div class="grade" style="background:#36618f;"><div class="name">中尉</div></div>
+      <div class="duty" style="background:#36618f;">副連長 / 排長（資深）</div>
+      <div class="mark" style="background:#36618f;color:#ffd97a;letter-spacing:2px;">▬▬</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#36618f;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#36618f;"><div class="name">少尉</div></div>
+      <div class="duty" style="background:#36618f;">排長</div>
+      <div class="mark" style="background:#36618f;color:#ffd97a;border-radius:0 0 4px 0;letter-spacing:2px;">▬</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#3d6b8c;border-radius:4px 0 0 4px;">士官</div>
+      <div class="grade" style="background:#3d6b8c;"><div class="name">一等士官長</div><div class="sub">士官長</div></div>
+      <div class="duty" style="background:#3d6b8c;">旅部 / 指揮部士官督導長</div>
+      <div class="mark" style="background:#3d6b8c;color:#cfe2f0;border-radius:0 4px 4px 0;">士官長</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#3d6b8c;"></div>
+      <div class="grade" style="background:#3d6b8c;"><div class="name">二等士官長</div></div>
+      <div class="duty" style="background:#3d6b8c;">營部士官督導長</div>
+      <div class="mark" style="background:#3d6b8c;color:#cfe2f0;">士官長</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#3d6b8c;"></div>
+      <div class="grade" style="background:#3d6b8c;"><div class="name">三等士官長</div></div>
+      <div class="duty" style="background:#3d6b8c;">連士官長</div>
+      <div class="mark" style="background:#3d6b8c;color:#cfe2f0;">士官長</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#4a7ba0;"></div>
+      <div class="grade" style="background:#4a7ba0;"><div class="name">上士</div><div class="sub">資深士官</div></div>
+      <div class="duty" style="background:#4a7ba0;">副排長 / 資深班長</div>
+      <div class="mark" style="background:#4a7ba0;color:#cfe2f0;">V形臂章</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#4a7ba0;"></div>
+      <div class="grade" style="background:#4a7ba0;"><div class="name">中士</div></div>
+      <div class="duty" style="background:#4a7ba0;">班長</div>
+      <div class="mark" style="background:#4a7ba0;color:#cfe2f0;">V形臂章</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#4a7ba0;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#4a7ba0;"><div class="name">下士</div></div>
+      <div class="duty" style="background:#4a7ba0;">副班長</div>
+      <div class="mark" style="background:#4a7ba0;color:#cfe2f0;border-radius:0 0 4px 0;">V形臂章</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#7a8b99;border-radius:4px 0 0 4px;">士兵</div>
+      <div class="grade" style="background:#7a8b99;"><div class="name">上等兵</div></div>
+      <div class="duty" style="background:#7a8b99;">代理班長 / 副班長（資深士兵）</div>
+      <div class="mark" style="background:#7a8b99;color:#eef1f4;border-radius:0 4px 4px 0;">兵籍標</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#7a8b99;"></div>
+      <div class="grade" style="background:#7a8b99;"><div class="name">一等兵</div></div>
+      <div class="duty" style="background:#7a8b99;">士兵（無領導職務）</div>
+      <div class="mark" style="background:#7a8b99;color:#eef1f4;">兵籍標</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#7a8b99;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#7a8b99;"><div class="name">二等兵</div></div>
+      <div class="duty" style="background:#7a8b99;">士兵（入伍後最初階）</div>
+      <div class="mark" style="background:#7a8b99;color:#eef1f4;border-radius:0 0 4px 0;">兵籍標</div>
+    </div>
+
+    <div class="note">
+      <b>陸海空三軍說明：</b>三軍階級名稱完全相同；差異在肩章圖樣（陸金底梅花星、海袖章＋肩章、空飛翼章）、軍種顏色（陸綠／海深藍／空淺藍）與職務屬性。<b>政戰官</b>為軍官政戰兵科，走同一階梯，常見職務如連輔導長、營政戰官、旅政戰主任。
+    </div>
+  </div>
+
+  <!-- ========== 美軍 ========== -->
+  <div class="panel" id="p-us">
+    <div style="font-size:17px;font-weight:700;margin-bottom:10px;color:#4a5d3a;">🇺🇸 美軍（以陸軍為例）</div>
+
+    <div class="grid-head"><div>分支</div><div>階級</div><div>部隊常見職務</div><div>代碼</div></div>
+
+    <div class="row">
+      <div class="branch" style="background:#4a5d3a;border-radius:4px 0 0 4px;">軍官</div>
+      <div class="grade" style="background:#4a5d3a;"><div class="name">General</div><div class="sub">四星上將</div></div>
+      <div class="duty" style="background:#4a5d3a;">Chief of Staff of the Army / 戰區司令</div>
+      <div class="mark" style="background:#4a5d3a;color:#e2e8d5;border-radius:0 4px 4px 0;">O-10</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#4a5d3a;"></div>
+      <div class="grade" style="background:#4a5d3a;"><div class="name">Lieutenant General</div></div>
+      <div class="duty" style="background:#4a5d3a;">軍團司令 / 司令部副指揮官</div>
+      <div class="mark" style="background:#4a5d3a;color:#e2e8d5;">O-9</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#4a5d3a;"></div>
+      <div class="grade" style="background:#4a5d3a;"><div class="name">Major General</div></div>
+      <div class="duty" style="background:#4a5d3a;">師長</div>
+      <div class="mark" style="background:#4a5d3a;color:#e2e8d5;">O-8</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#4a5d3a;"></div>
+      <div class="grade" style="background:#4a5d3a;"><div class="name">Brigadier General</div><div class="sub">准將（美軍獨有）</div></div>
+      <div class="duty" style="background:#4a5d3a;">副師長 / 獨立旅指揮官</div>
+      <div class="mark" style="background:#4a5d3a;color:#e2e8d5;">O-7</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#5d704a;"></div>
+      <div class="grade" style="background:#5d704a;"><div class="name">Colonel</div></div>
+      <div class="duty" style="background:#5d704a;">旅長 / 駐地指揮官</div>
+      <div class="mark" style="background:#5d704a;color:#e2e8d5;">O-6</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#5d704a;"></div>
+      <div class="grade" style="background:#5d704a;"><div class="name">Lieutenant Colonel</div></div>
+      <div class="duty" style="background:#5d704a;">營長 / 中隊長（Squadron）</div>
+      <div class="mark" style="background:#5d704a;color:#e2e8d5;">O-5</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#5d704a;"></div>
+      <div class="grade" style="background:#5d704a;"><div class="name">Major</div></div>
+      <div class="duty" style="background:#5d704a;">營副（XO）/ 資深連長</div>
+      <div class="mark" style="background:#5d704a;color:#e2e8d5;">O-4</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6f8258;"></div>
+      <div class="grade" style="background:#6f8258;"><div class="name">Captain</div></div>
+      <div class="duty" style="background:#6f8258;">連長（Company Commander）</div>
+      <div class="mark" style="background:#6f8258;color:#e2e8d5;">O-3</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6f8258;"></div>
+      <div class="grade" style="background:#6f8258;"><div class="name">First Lieutenant</div></div>
+      <div class="duty" style="background:#6f8258;">副連長 / 資深排長</div>
+      <div class="mark" style="background:#6f8258;color:#e2e8d5;">O-2</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6f8258;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#6f8258;"><div class="name">Second Lieutenant</div></div>
+      <div class="duty" style="background:#6f8258;">排長（Platoon Leader）</div>
+      <div class="mark" style="background:#6f8258;color:#e2e8d5;border-radius:0 0 4px 0;">O-1</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#6b7a4a;border-radius:4px 0 0 4px;">准尉</div>
+      <div class="grade" style="background:#6b7a4a;"><div class="name">Chief Warrant Officer 5</div></div>
+      <div class="duty" style="background:#6b7a4a;">部隊首席技官／飛行員顧問</div>
+      <div class="mark" style="background:#6b7a4a;color:#e2e8d5;border-radius:0 4px 4px 0;">W-5</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6b7a4a;"></div>
+      <div class="grade" style="background:#6b7a4a;"><div class="name">CWO-4</div></div>
+      <div class="duty" style="background:#6b7a4a;">資深技官 / 飛行員</div>
+      <div class="mark" style="background:#6b7a4a;color:#e2e8d5;">W-4</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6b7a4a;"></div>
+      <div class="grade" style="background:#6b7a4a;"><div class="name">CWO-3</div></div>
+      <div class="duty" style="background:#6b7a4a;">飛行員 / 系統技官</div>
+      <div class="mark" style="background:#6b7a4a;color:#e2e8d5;">W-3</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6b7a4a;"></div>
+      <div class="grade" style="background:#6b7a4a;"><div class="name">CWO-2</div></div>
+      <div class="duty" style="background:#6b7a4a;">初階飛行員 / 維修技官</div>
+      <div class="mark" style="background:#6b7a4a;color:#e2e8d5;">W-2</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6b7a4a;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#6b7a4a;"><div class="name">Warrant Officer 1</div></div>
+      <div class="duty" style="background:#6b7a4a;">准軍官學校結業，初階技官</div>
+      <div class="mark" style="background:#6b7a4a;color:#e2e8d5;border-radius:0 0 4px 0;">W-1</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#8a9a6a;border-radius:4px 0 0 4px;">士官</div>
+      <div class="grade" style="background:#8a9a6a;"><div class="name">Sergeant Major / CSM</div></div>
+      <div class="duty" style="background:#8a9a6a;">部隊指揮士官長（營旅首席士官）</div>
+      <div class="mark" style="background:#8a9a6a;color:#f0f3e5;border-radius:0 4px 4px 0;">E-9</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8a9a6a;"></div>
+      <div class="grade" style="background:#8a9a6a;"><div class="name">First Sergeant / Master Sergeant</div></div>
+      <div class="duty" style="background:#8a9a6a;">連士官長（1SG）/ 參謀士官</div>
+      <div class="mark" style="background:#8a9a6a;color:#f0f3e5;">E-8</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8a9a6a;"></div>
+      <div class="grade" style="background:#8a9a6a;"><div class="name">Sergeant First Class</div></div>
+      <div class="duty" style="background:#8a9a6a;">排士官長（Platoon Sergeant）</div>
+      <div class="mark" style="background:#8a9a6a;color:#f0f3e5;">E-7</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8a9a6a;"></div>
+      <div class="grade" style="background:#8a9a6a;"><div class="name">Staff Sergeant</div></div>
+      <div class="duty" style="background:#8a9a6a;">班長 / 參謀士官</div>
+      <div class="mark" style="background:#8a9a6a;color:#f0f3e5;">E-6</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8a9a6a;"></div>
+      <div class="grade" style="background:#8a9a6a;"><div class="name">Sergeant</div></div>
+      <div class="duty" style="background:#8a9a6a;">班長（Squad Leader）</div>
+      <div class="mark" style="background:#8a9a6a;color:#f0f3e5;">E-5</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8a9a6a;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#8a9a6a;"><div class="name">Corporal / Specialist</div></div>
+      <div class="duty" style="background:#8a9a6a;">組長 / 專業兵</div>
+      <div class="mark" style="background:#8a9a6a;color:#f0f3e5;border-radius:0 0 4px 0;">E-4</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#a8b58a;border-radius:4px 0 0 4px;">士兵</div>
+      <div class="grade" style="background:#a8b58a;"><div class="name">Private First Class</div></div>
+      <div class="duty" style="background:#a8b58a;">資深士兵</div>
+      <div class="mark" style="background:#a8b58a;color:#f7f8f0;border-radius:0 4px 4px 0;">E-3</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a8b58a;"></div>
+      <div class="grade" style="background:#a8b58a;"><div class="name">Private</div></div>
+      <div class="duty" style="background:#a8b58a;">士兵</div>
+      <div class="mark" style="background:#a8b58a;color:#f7f8f0;">E-2</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a8b58a;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#a8b58a;"><div class="name">Recruit</div></div>
+      <div class="duty" style="background:#a8b58a;">新兵</div>
+      <div class="mark" style="background:#a8b58a;color:#f7f8f0;border-radius:0 0 4px 0;">E-1</div>
+    </div>
+
+    <div class="note">
+      <b>美軍三軍差異：</b>階級代碼（O/W/E）三軍通用，但名稱不同 — 海軍 O-3 是 Lieutenant（不是 Captain）、O-6 是 Captain；空軍把 E-4 以上統一稱 Senior Airman 起；陸戰隊把 E-8 以 Master Sergeant / First Sergeant 並存。<b>准尉（Warrant Officer）</b>是美軍獨有的雙軌：介於軍官與士官之間，以技術／飛行專長進階，不需指揮官資格。
+    </div>
+  </div>
+
+  <!-- ========== 解放軍 ========== -->
+  <div class="panel" id="p-pla">
+    <div style="font-size:17px;font-weight:700;margin-bottom:10px;color:#8b2e2e;">🇨🇳 中國人民解放軍（2022 新制）</div>
+
+    <div class="grid-head"><div>分支</div><div>階級</div><div>部隊常見職務</div><div>分類</div></div>
+
+    <div class="row">
+      <div class="branch" style="background:#8b2e2e;border-radius:4px 0 0 4px;">軍官</div>
+      <div class="grade" style="background:#8b2e2e;"><div class="name">上将</div></div>
+      <div class="duty" style="background:#8b2e2e;">軍委副主席 / 戰區司令員</div>
+      <div class="mark" style="background:#8b2e2e;color:#f0d0d0;border-radius:0 4px 4px 0;">將官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8b2e2e;"></div>
+      <div class="grade" style="background:#8b2e2e;"><div class="name">中将</div></div>
+      <div class="duty" style="background:#8b2e2e;">戰區副司令 / 軍種副司令</div>
+      <div class="mark" style="background:#8b2e2e;color:#f0d0d0;">將官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8b2e2e;"></div>
+      <div class="grade" style="background:#8b2e2e;"><div class="name">少将</div></div>
+      <div class="duty" style="background:#8b2e2e;">軍長 / 省軍區司令員</div>
+      <div class="mark" style="background:#8b2e2e;color:#f0d0d0;">將官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a04040;"></div>
+      <div class="grade" style="background:#a04040;"><div class="name">大校</div><div class="sub">解放軍獨有</div></div>
+      <div class="duty" style="background:#a04040;">師長 / 旅長</div>
+      <div class="mark" style="background:#a04040;color:#f0d0d0;">校官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a04040;"></div>
+      <div class="grade" style="background:#a04040;"><div class="name">上校</div></div>
+      <div class="duty" style="background:#a04040;">副旅長 / 團長</div>
+      <div class="mark" style="background:#a04040;color:#f0d0d0;">校官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a04040;"></div>
+      <div class="grade" style="background:#a04040;"><div class="name">中校</div></div>
+      <div class="duty" style="background:#a04040;">營長</div>
+      <div class="mark" style="background:#a04040;color:#f0d0d0;">校官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a04040;"></div>
+      <div class="grade" style="background:#a04040;"><div class="name">少校</div></div>
+      <div class="duty" style="background:#a04040;">副營長 / 資深連長</div>
+      <div class="mark" style="background:#a04040;color:#f0d0d0;">校官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#b85858;"></div>
+      <div class="grade" style="background:#b85858;"><div class="name">上尉</div></div>
+      <div class="duty" style="background:#b85858;">連長</div>
+      <div class="mark" style="background:#b85858;color:#f0d0d0;">尉官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#b85858;"></div>
+      <div class="grade" style="background:#b85858;"><div class="name">中尉</div></div>
+      <div class="duty" style="background:#b85858;">副連長 / 資深排長</div>
+      <div class="mark" style="background:#b85858;color:#f0d0d0;">尉官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#b85858;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#b85858;"><div class="name">少尉</div></div>
+      <div class="duty" style="background:#b85858;">排長</div>
+      <div class="mark" style="background:#b85858;color:#f0d0d0;border-radius:0 0 4px 0;">尉官</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#a84848;border-radius:4px 0 0 4px;">軍士</div>
+      <div class="grade" style="background:#a84848;"><div class="name">一级军士长</div><div class="sub">高級軍士</div></div>
+      <div class="duty" style="background:#a84848;">旅／營部首席技士</div>
+      <div class="mark" style="background:#a84848;color:#f0d0d0;border-radius:0 4px 4px 0;">高級</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a84848;"></div>
+      <div class="grade" style="background:#a84848;"><div class="name">二级军士长</div></div>
+      <div class="duty" style="background:#a84848;">營部技士</div>
+      <div class="mark" style="background:#a84848;color:#f0d0d0;">高級</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a84848;"></div>
+      <div class="grade" style="background:#a84848;"><div class="name">三级军士长</div></div>
+      <div class="duty" style="background:#a84848;">連部技士</div>
+      <div class="mark" style="background:#a84848;color:#f0d0d0;">高級</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#bc6060;"></div>
+      <div class="grade" style="background:#bc6060;"><div class="name">一级上士</div><div class="sub">中級軍士（2022 新制）</div></div>
+      <div class="duty" style="background:#bc6060;">資深班長</div>
+      <div class="mark" style="background:#bc6060;color:#f0d0d0;">中級</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#bc6060;"></div>
+      <div class="grade" style="background:#bc6060;"><div class="name">二级上士</div></div>
+      <div class="duty" style="background:#bc6060;">班長</div>
+      <div class="mark" style="background:#bc6060;color:#f0d0d0;">中級</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#d07878;"></div>
+      <div class="grade" style="background:#d07878;"><div class="name">中士</div><div class="sub">初級軍士</div></div>
+      <div class="duty" style="background:#d07878;">副班長</div>
+      <div class="mark" style="background:#d07878;color:#fae0e0;">初級</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#d07878;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#d07878;"><div class="name">下士</div></div>
+      <div class="duty" style="background:#d07878;">資深副班長</div>
+      <div class="mark" style="background:#d07878;color:#fae0e0;border-radius:0 0 4px 0;">初級</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#c87878;border-radius:4px 0 0 4px;">義務兵</div>
+      <div class="grade" style="background:#c87878;"><div class="name">上等兵</div></div>
+      <div class="duty" style="background:#c87878;">資深義務兵</div>
+      <div class="mark" style="background:#c87878;color:#fae0e0;border-radius:0 4px 4px 0;">義務兵</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#c87878;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#c87878;"><div class="name">列兵</div></div>
+      <div class="duty" style="background:#c87878;">新兵</div>
+      <div class="mark" style="background:#c87878;color:#fae0e0;border-radius:0 0 4px 0;">義務兵</div>
+    </div>
+
+    <div class="note">
+      <b>2022 年新制重點：</b>軍士（志願役）與義務兵分開；軍士分三等七銜 — 高級（一～三級軍士長）、中級（一級上士、二級上士）、初級（中士、下士）。原「四級軍士長、上士」名稱已走入歷史。<b>大校</b>是解放軍獨有，位於少將與上校之間，主要授予師／旅級主官。
+    </div>
+  </div>
+
+  <!-- ========== 日自衛隊 ========== -->
+  <div class="panel" id="p-jsd">
+    <div style="font-size:17px;font-weight:700;margin-bottom:10px;color:#2c3e5a;">🇯🇵 日本自衛隊</div>
+
+    <div class="grid-head"><div>分支</div><div>階級</div><div>部隊常見職務</div><div>分類</div></div>
+
+    <div class="row">
+      <div class="branch" style="background:#2c3e5a;border-radius:4px 0 0 4px;">將官</div>
+      <div class="grade" style="background:#2c3e5a;"><div class="name">陸将幕僚長</div><div class="sub">（海将／空将）</div></div>
+      <div class="duty" style="background:#2c3e5a;">統合幕僚長 / 各自衛隊幕僚長</div>
+      <div class="mark" style="background:#2c3e5a;color:#d0dcef;border-radius:0 4px 4px 0;">幕僚長級</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#2c3e5a;"></div>
+      <div class="grade" style="background:#2c3e5a;"><div class="name">陸将</div><div class="sub">（海将／空将）</div></div>
+      <div class="duty" style="background:#2c3e5a;">方面隊總監 / 輸送航空隊司令</div>
+      <div class="mark" style="background:#2c3e5a;color:#d0dcef;">將</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#2c3e5a;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#2c3e5a;"><div class="name">将補</div></div>
+      <div class="duty" style="background:#2c3e5a;">旅團長 / 副方面總監</div>
+      <div class="mark" style="background:#2c3e5a;color:#d0dcef;border-radius:0 0 4px 0;">將補</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#4a6080;border-radius:4px 0 0 4px;">佐官</div>
+      <div class="grade" style="background:#4a6080;"><div class="name">1佐</div></div>
+      <div class="duty" style="background:#4a6080;">連隊長（相當於團／營主官）</div>
+      <div class="mark" style="background:#4a6080;color:#d0dcef;border-radius:0 4px 4px 0;">佐</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#4a6080;"></div>
+      <div class="grade" style="background:#4a6080;"><div class="name">2佐</div></div>
+      <div class="duty" style="background:#4a6080;">副連隊長 / 大隊長</div>
+      <div class="mark" style="background:#4a6080;color:#d0dcef;">佐</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#4a6080;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#4a6080;"><div class="name">3佐</div></div>
+      <div class="duty" style="background:#4a6080;">中隊長（相當於連長）</div>
+      <div class="mark" style="background:#4a6080;color:#d0dcef;border-radius:0 0 4px 0;">佐</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#6a80a0;border-radius:4px 0 0 4px;">尉官</div>
+      <div class="grade" style="background:#6a80a0;"><div class="name">1尉</div></div>
+      <div class="duty" style="background:#6a80a0;">中隊副 / 資深小隊長</div>
+      <div class="mark" style="background:#6a80a0;color:#e8eef8;border-radius:0 4px 4px 0;">尉</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6a80a0;"></div>
+      <div class="grade" style="background:#6a80a0;"><div class="name">2尉</div></div>
+      <div class="duty" style="background:#6a80a0;">小隊長（相當於排長）</div>
+      <div class="mark" style="background:#6a80a0;color:#e8eef8;">尉</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6a80a0;"></div>
+      <div class="grade" style="background:#6a80a0;"><div class="name">3尉</div></div>
+      <div class="duty" style="background:#6a80a0;">小隊長補佐</div>
+      <div class="mark" style="background:#6a80a0;color:#e8eef8;">尉</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#6a80a0;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#6a80a0;"><div class="name">准尉</div></div>
+      <div class="duty" style="background:#6a80a0;">曹長昇任至幹部之銜接階</div>
+      <div class="mark" style="background:#6a80a0;color:#e8eef8;border-radius:0 0 4px 0;">准尉</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#8aa0c0;border-radius:4px 0 0 4px;">曹</div>
+      <div class="grade" style="background:#8aa0c0;"><div class="name">曹長</div></div>
+      <div class="duty" style="background:#8aa0c0;">部隊首席曹（資深士官長）</div>
+      <div class="mark" style="background:#8aa0c0;color:#f0f4fb;border-radius:0 4px 4px 0;">士官長</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8aa0c0;"></div>
+      <div class="grade" style="background:#8aa0c0;"><div class="name">1曹</div></div>
+      <div class="duty" style="background:#8aa0c0;">小隊長補佐 / 資深分隊長</div>
+      <div class="mark" style="background:#8aa0c0;color:#f0f4fb;">士官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8aa0c0;"></div>
+      <div class="grade" style="background:#8aa0c0;"><div class="name">2曹</div></div>
+      <div class="duty" style="background:#8aa0c0;">分隊長（相當於班長）</div>
+      <div class="mark" style="background:#8aa0c0;color:#f0f4fb;">士官</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#8aa0c0;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#8aa0c0;"><div class="name">3曹</div></div>
+      <div class="duty" style="background:#8aa0c0;">分隊長補佐</div>
+      <div class="mark" style="background:#8aa0c0;color:#f0f4fb;border-radius:0 0 4px 0;">士官</div>
+    </div>
+
+    <div class="row" style="margin-top:8px;">
+      <div class="branch" style="background:#a8bcd8;border-radius:4px 0 0 4px;">士</div>
+      <div class="grade" style="background:#a8bcd8;"><div class="name">1士</div></div>
+      <div class="duty" style="background:#a8bcd8;">資资深隊員</div>
+      <div class="mark" style="background:#a8bcd8;color:#f7f9fd;border-radius:0 4px 4px 0;">士</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a8bcd8;"></div>
+      <div class="grade" style="background:#a8bcd8;"><div class="name">2士</div></div>
+      <div class="duty" style="background:#a8bcd8;">隊員</div>
+      <div class="mark" style="background:#a8bcd8;color:#f7f9fd;">士</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a8bcd8;"></div>
+      <div class="grade" style="background:#a8bcd8;"><div class="name">3士</div></div>
+      <div class="duty" style="background:#a8bcd8;">新隊員</div>
+      <div class="mark" style="background:#a8bcd8;color:#f7f9fd;">士</div>
+    </div>
+    <div class="row">
+      <div class="branch" style="background:#a8bcd8;border-radius:0 0 0 4px;"></div>
+      <div class="grade" style="background:#a8bcd8;"><div class="name">自衛官候補生</div></div>
+      <div class="duty" style="background:#a8bcd8;">教育隊候補生</div>
+      <div class="mark" style="background:#a8bcd8;color:#f7f9fd;border-radius:0 0 4px 0;">候補</div>
+    </div>
+
+    <div class="note">
+      <b>自衛隊特色：</b>階級名稱陸海空三軍一致，僅在「陸／海／空」冠於階級前（如陸将・海将・空将）。<b>「曹」= 士官、「士」= 士兵</b>；<b>「1佐／2佐／3佐」對應校官，「1尉／2尉／3尉」對應尉官</b>，與中華民國的上校／中校／少校、上尉／中尉／少尉幾乎一一對應。
+    </div>
+  </div>
+
+  <!-- ========== 跨國對照 ========== -->
+  <div class="panel" id="p-cross">
+    <div style="font-size:17px;font-weight:700;margin-bottom:10px;">🔀 跨國軍階對照表（簡版）</div>
+    <div style="font-size:12px;color:#5F6670;margin-bottom:12px;">功能性對照，非絕對同等；「—」代表該國無對應階級。</div>
+
+    <div style="overflow-x:auto;">
+      <table class="cross">
+        <thead>
+          <tr>
+            <th>功能層級</th>
+            <th>🇹🇼 中華民國</th>
+            <th>🇺🇸 美軍</th>
+            <th>🇨🇳 解放軍</th>
+            <th>🇯🇵 日自衛隊</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="lvl">最高將官</td><td>一級上將</td><td>General (O-10)</td><td>上将</td><td>陸将幕僚長</td></tr>
+          <tr><td class="lvl">上將級</td><td>二級上將</td><td>Lt. General (O-9)</td><td>中将</td><td>陸将</td></tr>
+          <tr><td class="lvl">中將級</td><td>中將</td><td>Maj. General (O-8)</td><td>少将</td><td>将補</td></tr>
+          <tr><td class="lvl">少將／准將</td><td>少將</td><td>Brig. General (O-7)</td><td class="muted">—</td><td class="muted">—</td></tr>
+          <tr><td class="lvl">大校</td><td class="muted">—</td><td class="muted">—</td><td>大校</td><td class="muted">—</td></tr>
+          <tr><td class="lvl">上校級</td><td>上校</td><td>Colonel (O-6)</td><td>上校</td><td>1佐</td></tr>
+          <tr><td class="lvl">中校級</td><td>中校</td><td>Lt. Colonel (O-5)</td><td>中校</td><td>2佐</td></tr>
+          <tr><td class="lvl">少校級</td><td>少校</td><td>Major (O-4)</td><td>少校</td><td>3佐</td></tr>
+          <tr><td class="lvl">上尉級</td><td>上尉</td><td>Captain (O-3)</td><td>上尉</td><td>1尉</td></tr>
+          <tr><td class="lvl">中尉級</td><td>中尉</td><td>1st Lt. (O-2)</td><td>中尉</td><td>2尉</td></tr>
+          <tr><td class="lvl">少尉級</td><td>少尉</td><td>2nd Lt. (O-1)</td><td>少尉</td><td>3尉</td></tr>
+          <tr><td class="lvl">准尉</td><td class="muted">—</td><td>CWO (W-1~W-5)</td><td class="muted">—</td><td>准尉</td></tr>
+          <tr><td class="lvl">士官長／軍士長</td><td>一～三等士官長</td><td>Sgt. Major ~ SFC (E-9~E-7)</td><td>一～三级军士长</td><td>曹長・1曹</td></tr>
+          <tr><td class="lvl">資深士官</td><td>上士</td><td>Staff Sgt. (E-6)</td><td>一级上士</td><td>2曹・3曹</td></tr>
+          <tr><td class="lvl">中士級</td><td>中士</td><td>Sergeant (E-5)</td><td>二级上士</td><td>1士</td></tr>
+          <tr><td class="lvl">下士級</td><td>下士</td><td>Cpl./Spec. (E-4)</td><td>中士</td><td>2士</td></tr>
+          <tr><td class="lvl">資深士兵</td><td>上等兵</td><td>PFC (E-3)</td><td>下士</td><td>3士</td></tr>
+          <tr><td class="lvl">新兵</td><td>一等／二等兵</td><td>PV2 / Recruit (E-2~E-1)</td><td>上等兵／列兵</td><td>自衛官候補生</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <b>快速記憶：</b>
+      ① 台灣 ↔ 日本最像（佐／尉數字直接對應）；
+      ② 解放軍獨有<b>大校</b>，美軍獨有<b>准將＋准尉軌</b>；
+      ③ 美軍用 O／W／E 代碼制，外軍交流場合比名稱更常用；
+      ④ 解放軍 2022 年改士官新制，舊資料要注意對照。
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('.tabbtn');
+  var panels = {roc:'p-rocs', us:'p-us', pla:'p-pla', jsd:'p-jsd', cross:'p-cross'};
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+      Object.keys(panels).forEach(function(k){
+        var el = document.getElementById(panels[k]);
+        if(el) el.classList.remove('active');
+      });
+      var target = document.getElementById(panels[b.dataset.tab]);
+      if(target) target.classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
